@@ -1,0 +1,35 @@
+<% layout("/layouts/boilerplate") -%>
+<style>
+    .heading {
+        text-align: center; /* To center the text horizontally */
+         justify-content: center;
+        align-items: center;
+    }
+</style>
+<h1 class="heading">This all listings Category of <%= category %></h1>
+ 
+<div class="row row-cols-lg-3 row row-cols-md-2 row row-cols-sm-1 mt-3">   
+    <%for(let listing of listings){%>
+        
+     <a href="/listings/<%= listing._id %>" class="listing-links">
+   <div class="card col listing-card">
+       <img src="<%=listing.image.url%>" class="card-img-top" alt="..." style="height: 20rem;">
+       <div class="card-img-overlay"><b> <%= listing.title %></b></div>
+       <div class="card-body">
+         <p class="card-text">
+             <div class="title-and-price">
+                 <b class="title"><%= listing.title %></b>
+                 <div id="pricesDiv">
+                     <span class="prices">&#x20B9; <b><%= listing.price.toLocaleString("en-IN") %></b>/night</span>
+                     <i class="tax-info">+18% GST</i>
+                 </div>
+             </div>
+         </p>
+     </div>
+     </div>
+     <%}%>
+   </div>
+   
+
+
+

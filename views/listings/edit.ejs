@@ -1,0 +1,82 @@
+<% layout("/layouts/boilerplate") -%>
+<body>
+    <div class="row mt-3">
+        <div class="col-lg-8 col-md-10 col-sm-12 offset-lg-2 offset-md-1">
+            <h3>Edit Your Listing</h3>
+
+            <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+
+                <!-- Select Category -->
+                <div class="mb-3">
+                    <label for="category" class="form-label">Select a category:</label>
+                    <select id="category" name="listing[category]" class="form-select">
+                      <option value="Rooms">Rooms</option>
+                      <option value="Iconic cities">Iconic cities</option>
+                      <option value="Mountains">Mountains</option>
+                      <option value="Castles">Castles</option>
+                      <option value="Amazing pools">Amazing pools</option>
+                      <option value="Camping">Camping</option>
+                      <option value="Farms">Farms</option>
+                      <option value="Artic">Artic</option>
+                      <option value="Beach">Beach</option>
+                      <option value="Tiny homes">Tiny homes</option>
+                    </select>
+                </div>
+
+                <!-- Title Input -->
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input name="listing[title]" value="<%= listing.title %>" type="text" class="form-control" required/>
+                    <div class="valid-feedback">Title Looks Good!</div>
+                </div>
+
+                <!-- Description Textarea -->
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea name="listing[description]" class="form-control" required><%= listing.description %></textarea>
+                    <div class="invalid-feedback">Please Enter Short Description.</div>
+                </div>
+                
+                <!-- Original Listing Image -->
+                <div class="mb-3">
+                    <label for="image" class="form-label">Original listing image</label>
+                    <div class="image-container">
+                        <img src="<%= originalUrl %>" class="img-fluid">
+                    </div>
+                </div>
+
+                <!-- Upload New Image -->
+                <div class="mb-3">
+                    <label for="image" class="form-label">Upload New Image</label>
+                    <input name="listing[image]" type="file" class="form-control" />
+                </div>
+
+                <!-- Price Input -->
+                <div class="row">
+                    <div class="mb-3 col-lg-4 col-md-6">
+                        <label for="price" class="form-label">Price</label>
+                        <input name="listing[price]" value="<%= listing.price %>" type="number" class="form-control" required/>
+                        <div class="invalid-feedback">Price Should Be Valid.</div>
+                    </div>
+                    
+                    <!-- Country Input -->
+                    <div class="mb-3 col-lg-8 col-md-6">
+                        <label for="country" class="form-label">Country</label>
+                        <input name="listing[country]" value="<%= listing.country %>" type="text" class="form-control" required/>
+                        <div class="invalid-feedback">Country Name Should Be Valid.</div>
+                    </div>
+                </div>
+
+                <!-- Location Input -->
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input name="listing[location]" value="<%= listing.location %>" type="text" class="form-control" required/>
+                    <div class="invalid-feedback">Location Should Be Valid.</div>
+                </div>
+
+                <!-- Submit Button -->
+                <button class="btn btn-dark editbtn mb-2">Edit</button>
+            </form>
+        </div>
+    </div>
+</body>
