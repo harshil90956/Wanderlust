@@ -49,7 +49,7 @@ priceToggle.addEventListener("click", () => {
 
       // Restore original prices
       for (let i = 0; i < prices.length; i++) {
-        prices[i].innerHTML = `₹ ${originalPrices[i]}`; // Display original price without GST
+        prices[i].innerHTML = `₹ ${originalPrices[i]} /night`; // Display original price without GST
       }
     }
   }

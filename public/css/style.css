@@ -207,18 +207,18 @@ body {
 }
 
 @media (max-width: 767px) {
-  /* Small screens */
   .filter {
-    margin-right: 0.5rem;
-    margin-top: 1rem;
+      pointer-events: none;
+      display: none !important;
+      opacity: 0.5;
   }
-
+}
   .tax-toggle {
     margin-left: 0;
     margin-top: 1rem;
     width: auto;
   }
-}
+
 
 .title-and-prices {
   display: flex;
