@@ -42,14 +42,14 @@ priceToggle.addEventListener("click", () => {
         let currentPrice = originalPrices[i];
         let gstAmount = currentPrice * 0.18; // Calculate GST amount
         let priceWithGST = currentPrice + gstAmount; // Calculate price with GST
-        prices[i].innerHTML = `₹ ${priceWithGST.toFixed(2)}`; // Display price with GST
+        prices[i].innerHTML = `₹ ${priceWithGST.toFixed(2)} night`; // Display price with GST
       }
     } else {
       info.style.display = "none";
 
       // Restore original prices
       for (let i = 0; i < prices.length; i++) {
-        prices[i].innerHTML = `₹ ${originalPrices[i]} /night`; // Display original price without GST
+        prices[i].innerHTML = `₹ ${originalPrices[i]} night`; // Display original price without GST
       }
     }
   }
