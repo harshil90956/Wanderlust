@@ -10,7 +10,7 @@
 /* Base styles */
 .btn-search {
   background-color: #fe424d;
-  color: #fff; 
+  color: #fff;
   z-index: 1;
   border-radius: 25px;
   padding: 0 1rem 0 1rem;
@@ -57,14 +57,14 @@
 
 }
   </style>
-  
   <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#navbarNavAltMarkup" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggle-label">Click Me</span> <!-- Added label here -->
       </button>
-      <div class="collapse navbar-collapse show" id="navbarNavAltMarkup">
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-link" href="/listings">Explore</a>
         </div>
@@ -83,9 +83,10 @@
           <a class="nav-link" href="/login"><b>Log in</b></a>
           <%}%>
           <% if(currUser) {%>
-          <a class="nav-link" href="/logout"><b>Log out</b></a>
+          <a class="nav-link disabled" aria-disabled="true" href="/logout"><b>Log out</b></a>
           <% } %>
         </div>
       </div>
     </div>
-</nav>
+  </nav>
+  
